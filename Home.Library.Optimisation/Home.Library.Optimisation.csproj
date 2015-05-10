@@ -45,6 +45,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="LeastSquares\Class1.cs" />
+    <Compile Include="LeastSquares\ObjectiveFunction.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="QuadProg\ProblemGeneration\ExcelSpreadSheet.cs" />
@@ -67,6 +69,15 @@
     <Compile Include="QuadProg\QpSolver.cs" />
     <Compile Include="QuadProg\TerminationType.cs" />
     <Compile Include="QuadProg\ProfileMatchingQpConverter.cs" />
+    <Compile Include="RootFinding\BaileysAlgorithm.cs" />
+    <Compile Include="RootFinding\IMinimisationProblem.cs" />
+    <Compile Include="RootFinding\IRootFindingAlgorithm.cs" />
+    <Compile Include="RootFinding\MinimisationParameters.cs" />
+    <Compile Include="RootFinding\NewtonRaphsonAlgorithm.cs" />
+    <Compile Include="RootFinding\ObjectiveFunction.cs" />
+    <Compile Include="RootFinding\SecantAlgorithm.cs" />
+    <Compile Include="RootFinding\Solver.cs" />
+    <Compile Include="RootFinding\ProblemGeneration\SquareRootOfNine.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="..\Resources\QuadraticProgramming2.xlsx">

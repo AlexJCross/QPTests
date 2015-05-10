@@ -55,8 +55,10 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="QuadProg\UnitTest1.cs" />
+    <Compile Include="LeastSquaresFitting\Class1.cs" />
+    <Compile Include="QuadProg\QuadProgTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RootFinding\RootFindingTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Home.Library.Optimisation\Home.Library.Optimisation.csproj">
@@ -67,6 +69,7 @@
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup />
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
       <ItemGroup>

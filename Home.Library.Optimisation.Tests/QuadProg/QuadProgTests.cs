@@ -2,13 +2,15 @@
 {
     using Home.Library.Optimisation.QuadProg;
     using Home.Library.Optimisation.QuadProg.ProblemGeneration;
+
     using MathNet.Numerics.LinearAlgebra;
+    
     using Microsoft.VisualStudio.TestTools.UnitTesting;
-    using System;
+    
     using System.IO;
 
     [TestClass]
-    public class UnitTest1
+    public class QuadProgTests
     {
         const int n = 200;
         const double Epsilon = 1e-8;

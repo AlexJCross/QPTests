@@ -3,11 +3,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{97F6505D-F5D6-47ED-98C2-D30ABB2CF8CD}</ProjectGuid>
+    <ProjectGuid>{7CF219D3-EE7F-42C8-803E-9FAE9C28A6BE}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Tests</RootNamespace>
-    <AssemblyName>Tests</AssemblyName>
+    <RootNamespace>Home.Library.Optimisation.Tests</RootNamespace>
+    <AssemblyName>Home.Library.Optimisation.Tests</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -35,7 +35,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="MathNet.Numerics">
+    <Reference Include="MathNet.Numerics, Version=3.6.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\MathNet.Numerics.3.6.0\lib\net40\MathNet.Numerics.dll</HintPath>
     </Reference>
     <Reference Include="System" />
@@ -54,17 +55,13 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="QpTest.cs" />
+    <Compile Include="QuadProg\UnitTest1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\AlglibProject\AlglibProject.csproj">
-      <Project>{c7d25b5f-bcda-4aac-846d-cd3d27bca34a}</Project>
-      <Name>AlglibProject</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\QuadProg\QuadProg.csproj">
-      <Project>{61dbdbd8-13ae-4de1-a879-c1586f8db5b8}</Project>
-      <Name>QuadProg</Name>
+    <ProjectReference Include="..\Home.Library.Optimisation\Home.Library.Optimisation.csproj">
+      <Project>{fccefc31-fb58-491a-a1e6-186ad623bccb}</Project>
+      <Name>Home.Library.Optimisation</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

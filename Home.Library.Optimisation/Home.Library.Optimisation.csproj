@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{61DBDBD8-13AE-4DE1-A879-C1586F8DB5B8}</ProjectGuid>
+    <ProjectGuid>{FCCEFC31-FB58-491A-A1E6-186AD623BCCB}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>QuadProg</RootNamespace>
-    <AssemblyName>QuadProg</AssemblyName>
+    <RootNamespace>Home.Library.Optimisation</RootNamespace>
+    <AssemblyName>Home.Library.Optimisation</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -32,8 +32,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="MathNet.Numerics, Version=3.6.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
+    <Reference Include="MathNet.Numerics">
       <HintPath>..\packages\MathNet.Numerics.3.6.0\lib\net40\MathNet.Numerics.dll</HintPath>
     </Reference>
     <Reference Include="System" />
@@ -48,36 +47,26 @@
   <ItemGroup>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Setup\SpreadSheetExampleRunner.cs" />
-    <Compile Include="Setup\SpreadSheetExamples.cs" />
-    <Compile Include="Solver\Bound.cs" />
-    <Compile Include="Solver\BoxConstraint.cs" />
-    <Compile Include="Solver\ConsoleOutputService.cs" />
-    <Compile Include="Solver\IQpPreSolver.cs" />
-    <Compile Include="Solver\LowerBound.cs" />
-    <Compile Include="Solver\QpPreSolver.cs" />
-    <Compile Include="Solver\QpProgressAnalyser.cs" />
-    <Compile Include="Setup\ExcelSpreadSheet.cs" />
-    <Compile Include="Solver\IQpAlgorithm.cs" />
-    <Compile Include="Setup\QpLeastSquaresProblem.cs" />
-    <Compile Include="Solver\IQpProgressAnalyser.cs" />
-    <Compile Include="Solver\IQpInitialPointStrategy.cs" />
-    <Compile Include="Solver\IQpProgressReportBroadcaster.cs" />
-    <Compile Include="Solver\IQpProgressReportPublisher.cs" />
-    <Compile Include="Solver\NewtonSystem.cs" />
-    <Compile Include="Solver\PredictorCorrectorSolver.cs" />
-    <Compile Include="Solver\QpMessageUpdateEventArgs.cs" />
-    <Compile Include="Solver\QpProblem.cs" />
-    <Compile Include="Setup\SpreadSheetExample.cs" />
-    <Compile Include="Solver\QpProgressReport.cs" />
-    <Compile Include="Solver\QpProgressReportPublisher.cs" />
-    <Compile Include="Solver\QpReportPublishedEventArgs.cs" />
-    <Compile Include="Solver\QpSimpleStarter.cs" />
-    <Compile Include="Solver\QpTerminationCode.cs" />
-    <Compile Include="Solver\QpWarmStarter.cs" />
-    <Compile Include="Solver\Residuals.cs" />
-    <Compile Include="Solver\UpperBound.cs" />
-    <Compile Include="Solver\Variables.cs" />
+    <Compile Include="QuadProg\ProblemGeneration\ExcelSpreadSheet.cs" />
+    <Compile Include="QuadProg\IProfileMatchingProblem.cs" />
+    <Compile Include="QuadProg\IQpProblem.cs" />
+    <Compile Include="QuadProg\IQpSolver.cs" />
+    <Compile Include="QuadProg\IVectorMatchingQpConverter.cs" />
+    <Compile Include="QuadProg\ProblemGeneration\ProfileMatcherEquality.cs" />
+    <Compile Include="QuadProg\ProblemGeneration\ProfileMatcherInfeasible.cs" />
+    <Compile Include="QuadProg\ProblemGeneration\QpGeneratorSimple.cs" />
+    <Compile Include="QuadProg\ProblemGeneration\QpGeneratorInfeasible.cs" />
+    <Compile Include="QuadProg\ProblemGeneration\ProfileMatcherSpreadsheet.cs" />
+    <Compile Include="QuadProg\ProblemGeneration\ProfileMatcherSimple.cs" />
+    <Compile Include="QuadProg\ProblemGeneration\IProblemGenerator.cs" />
+    <Compile Include="QuadProg\ProblemGeneration\ProfileMatcherUnconstrained.cs" />
+    <Compile Include="QuadProg\ProfileMatchingMetric.cs" />
+    <Compile Include="QuadProg\ProfileMatchingProblem.cs" />
+    <Compile Include="QuadProg\QpProblem.cs" />
+    <Compile Include="QuadProg\QpReport.cs" />
+    <Compile Include="QuadProg\QpSolver.cs" />
+    <Compile Include="QuadProg\TerminationType.cs" />
+    <Compile Include="QuadProg\ProfileMatchingQpConverter.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="..\Resources\QuadraticProgramming2.xlsx">
@@ -87,7 +76,12 @@
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\AlglibProject\AlglibProject.csproj">
+      <Project>{c7d25b5f-bcda-4aac-846d-cd3d27bca34a}</Project>
+      <Name>AlglibProject</Name>
+    </ProjectReference>
+  </ItemGroup>
   <ItemGroup>
     <COMReference Include="Microsoft.Office.Core">
       <Guid>{2DF8D04C-5BFA-101B-BDE5-00AA0044DE52}</Guid>

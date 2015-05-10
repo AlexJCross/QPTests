@@ -29,13 +29,13 @@
             var listener = new ConsoleOutputService();
             listener.Subscribe(publisher);
 
-            var solverHack = new PredictorCorrectorSolver(
+            var solver = new PredictorCorrectorSolver(
                 new QpPreSolver(problem.A, problem.b), 
                 warmStarter, 
                 new QpProgressAnalyser(problem, true), 
                 publisher);
 
-            return solverHack.Solve(problem);
+            return solver.Solve(problem);
         }
 
         public void PrintResults(QpProgressReport results, SpreadSheetExample example, Int64 elapsedMs, StringBuilder stringBuilder)

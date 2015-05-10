@@ -33,6 +33,7 @@
                 .Build();
         }
 
+        [Ignore]
         [TestMethod]
         public void AcSolver()
         {
